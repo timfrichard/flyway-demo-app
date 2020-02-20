@@ -1,0 +1,93 @@
+management:
+  endpoint:
+    flyway:
+      enabled: true
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+server:
+  port: 8081
+spring:
+  datasource:
+    platform: "hsqldb"
+  flyway:
+    baselineOnMigrate: true
+    baselineDescription : "FLYWAY-BASELINE"
+    enabled: true
+    ignoreMissingMigrations: true
+    locations: "classpath:db/migration/hsql-db,classpath:db/migration/local"
+    outOfOrder: true
+    validateOnMigrate: true
+  hsql:
+    console:
+      enabled: true
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    open-in-view: true
+
+---
+
+spring:
+  profiles: hsql-persisted-profile
+  _comment: "This will be our DEV profile"
+  flyway:
+    locations: "classpath:db/migration/hsql-persisted-db,classpath:db/migration/dev"
+    password: "mysecret" 
+    url: "jdbc:hsqldb:hsql://localhost:9090/flywayDB"
+    user: "DB_OWNER_USER"
+  hsql:
+    console:
+      enabled: true
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    open-in-view: true
+com:
+  sparkys: 
+    online: 
+      orders: 
+        employee: 
+          db: 
+            login: 
+              timeout: "30"
+            schema: 
+              name: "PUBLIC"
+            url: "jdbc:hsqldb:hsql://localhost:9090/flywayDB"
+            user: 
+              name: "EMPLOYEE_APP_USER"
+              password: "mynonsecretpassw0rd"
+
+---
+
+spring:
+  profiles: postgresql-profile
+  _comment: "This will be our PRODUCTION profile"
+  datasource:
+    driver-class-name: "org.postgresql.Driver"
+    url: "jdbc:postgresql://192.168.99.104:5432/my_flyway_db"
+    username: "EMPLOYEE_APP_USER"
+    password: "mynonsecretpassw0rd"
+    platform: "postgresql"
+    _comment: "I hate Spring Boot you can't setup your own Datasource Config because it creates this Hikari datasource"
+  flyway:
+    locations: "classpath:db/migration/postgresql-db,classpath:db/migration/production"
+    mixed: true
+    password: "mysecret" 
+    url: "jdbc:postgresql://192.168.99.104:5432/my_flyway_db"
+    user: "DB_OWNER_USER"
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    properties:
+      hibernate:
+        dialect: "org.hibernate.dialect.PostgreSQL95Dialect"
+        jdbc:
+          lob:
+            non_contextual_creation: true
+        temp:
+          use_jdbc_metadata_defaults: false
+    open-in-view: true
+
+---
