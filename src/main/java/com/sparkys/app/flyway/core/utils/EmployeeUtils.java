@@ -1,7 +1,7 @@
 /**
  *
  */
-package com.sparkys.app.flyway.core.repository;
+package com.sparkys.app.flyway.core.utils;
 
 import com.sparkys.app.flyway.core.entities.AddressInfo;
 import com.sparkys.app.flyway.core.entities.BusinessInfo;

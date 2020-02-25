@@ -5,7 +5,7 @@ package com.sparkys.app.flyway.config;
 
 import com.sparkys.app.flyway.core.entities.Employee;
 import com.sparkys.app.flyway.core.repository.EmployeeRepository;
-import com.sparkys.app.flyway.core.repository.EmployeeUtils;
+import com.sparkys.app.flyway.core.utils.EmployeeUtils;
 
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Bean;
@@ -16,7 +16,7 @@ import org.springframework.context.annotation.Configuration;
  *
  */
 @Configuration
-public class CommonConfig {
+public class RunnerConfig {
 
     @Bean
     public CommandLineRunner runner(final EmployeeRepository repository) {

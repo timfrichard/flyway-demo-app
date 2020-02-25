@@ -1,0 +1,27 @@
+ 1.  Go to the directory where you stored postgresql_flyway_compose.yml
+
+ 2.  Run the following command:  docker-compose -f postgresql_flyway_compose.yml up
+
+ 3.  Run the following command:  docker ps 
+	 Example Results
+	 CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS              PORTS                    NAMES
+	 9b5577185676        postgres            "docker-entrypoint.s…"   11 minutes ago      Up 25 seconds       0.0.0.0:5432->5432/tcp   db-init-demo-postgres
+
+ 4.  Using the <CONTAINER ID> provided from #3 run the following command:  docker cp initialize-demo-db.sql <container-name>:/docker-entrypoint-initdb.d 
+	 EXAMPLE COMMAND:  docker cp initialize-demo-db.sql 9b5577185676:/docker-entrypoint-initdb.d 
+
+ 5.  Run the following command:  docker exec -it db-init-demo-postgres bash
+
+ 6.  Run the following command:  cd /docker-entrypoint-initdb.d
+
+ 7.  Run the following command:  psql -d my_flyway_db -f initialize-demo-db.sql -U postgres
+
+ 8.  Do demo
+
+ 9.  Run the following command:  exit {You should have exited the container OS}
+
+10.  Using the <CONTAINER ID> provided from #3 run the following command:  docker stop <CONTAINER ID> 
+
+11.  Using the <CONTAINER ID> provided from #3 run the following command:  docker container rm <CONTAINERID>
+
+
