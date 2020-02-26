@@ -13,6 +13,16 @@ Use Terminal to go to directory ../postgresql-init-stuff
 7. Run the following command: ```psql -d my_flyway_db -f initialize-demo-db.sql -U postgres```
 8. Run the following command:  ```exit``` {You should have exited the container OS}
   
-## Stop and remove container
+## Stop and remove Docker container
 1. Using the *\<CONTAINER ID\>* provided from #3 run the following command:  ```docker stop <CONTAINER ID>```
 2. Using the *\<CONTAINER ID\>* provided from #3 run the following command:  ```docker container rm <CONTAINERID>```
+
+## Instructions to use Persisted HSQLDB
+1. Clone https://github.com/timfrichard/hsqldb-server-start repository
+2. Run **com.sparkys.start.hsqldb.util.StartServer** as a Java application using *Program argument* like below.
+   - EXAMPLE "/temp/flyway/flyway-db" "FLYWAY_DB" "flywayDB" "9090"
+   - "/temp/liquibase/liquibase-db" *hard drive location*
+   - "FLYWAY_DB" *location name*
+   - "flywayDB" *database name*
+   - "9090" *port number*
+3. Update ```application.yml``` hsql-persisted-profile profile section with your information.
