@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # flyway-demo-app
 This Spring Boot application will demonstrate flyway capabilities while using Spring Boot
 
@@ -56,4 +55,3 @@ Use Terminal to go to directory ../postgresql-init-stuff
      - "flywayDB" *database name*
      - "9090" *port number*
 3. Update ```application.yml``` hsql-persisted-profile section with your information.
->>>>>>> branch 'master' of https://github.com/timfrichard/flyway-demo-app.git
