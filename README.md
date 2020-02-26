@@ -12,6 +12,7 @@ Use Terminal to go to directory ../postgresql-init-stuff
 6. Run the following command: ```cd /docker-entrypoint-initdb.d```
 7. Run the following command: ```psql -d my_flyway_db -f initialize-demo-db.sql -U postgres```
 8. Run the following command:  ```exit``` {You should have exited the container OS}
+9. Run the demo application.
   
 ## Stop and remove Docker container
 1. Using the *\<CONTAINER ID\>* provided from #3 run the following command:  ```docker stop <CONTAINER ID>```
@@ -25,4 +26,6 @@ Use Terminal to go to directory ../postgresql-init-stuff
      - "FLYWAY_DB" *location name*
      - "flywayDB" *database name*
      - "9090" *port number*
-3. Update ```application.yml``` hsql-persisted-profile section with your information.
+3. Open whatever SQL Manager you currently have and connect to the database.  Note: It should be the standard ```"sa"``` stuff for HSQLDB.
+4. Run the initialization script (```DB-Initialize-Persisted_HSQL.sql```) provided in the "hsql-init-stuff" directory.
+5. Update ```application.yml``` hsql-persisted-profile section with your information.
