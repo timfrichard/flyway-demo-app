@@ -4,7 +4,7 @@ This Spring Boot application will demonstrate flyway capabilities while using Sp
 ## Instructions to use Docker
 Use Terminal to go to directory ../postgresql-init-stuff
 1. Go to the directory where you stored postgresql_flyway_compose.yml
-2. Run the following command:  docker-compose -f postgresql_flyway_compose.yml up
+2. Run the following command: ```docker-compose -f postgresql_flyway_compose.yml up```
 3. Run the following command:  docker ps
 4. Using the <CONTAINER ID> provided from #3 run the following command:  docker cp initialize-demo-db.sql <container-name>:/docker-entrypoint-initdb.d
    - EXAMPLE COMMAND:  docker cp initialize-demo-db.sql 9b5577185676:/docker-entrypoint-initdb.d
