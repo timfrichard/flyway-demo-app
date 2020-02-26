@@ -14,5 +14,5 @@ Use Terminal to go to directory ../postgresql-init-stuff
 8. Run the following command:  ```exit``` {You should have exited the container OS}
   
 ## Stop and remove container
-1. Using the *<CONTAINER ID>* provided from #3 run the following command:  ```docker stop <CONTAINER ID>```
-2. Using the *<CONTAINER ID>* provided from #3 run the following command:  ```docker container rm <CONTAINERID>```
+1. Using the *\<CONTAINER ID\>* provided from #3 run the following command:  ```docker stop <CONTAINER ID>```
+2. Using the *\<CONTAINER ID\>* provided from #3 run the following command:  ```docker container rm <CONTAINERID>```
