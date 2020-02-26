@@ -25,4 +25,4 @@ Use Terminal to go to directory ../postgresql-init-stuff
      - "FLYWAY_DB" *location name*
      - "flywayDB" *database name*
      - "9090" *port number*
-3. Update ```application.yml``` hsql-persisted-profile profile section with your information.
+3. Update ```application.yml``` hsql-persisted-profile section with your information.
