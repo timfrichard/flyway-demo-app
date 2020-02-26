@@ -22,7 +22,7 @@ Use Terminal to go to directory ../postgresql-init-stuff
 2. Run **com.sparkys.start.hsqldb.util.StartServer** as a Java application using *Program argument* like below.
    - EXAMPLE "/temp/flyway/flyway-db" "FLYWAY_DB" "flywayDB" "9090"
      - "/temp/liquibase/liquibase-db" *hard drive location*
-   - "FLYWAY_DB" *location name*
-   - "flywayDB" *database name*
-   - "9090" *port number*
+     - "FLYWAY_DB" *location name*
+     - "flywayDB" *database name*
+     - "9090" *port number*
 3. Update ```application.yml``` hsql-persisted-profile profile section with your information.
