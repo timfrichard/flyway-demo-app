@@ -26,6 +26,6 @@ Use Terminal to go to directory ../postgresql-init-stuff
      - "FLYWAY_DB" *location name*
      - "flywayDB" *database name*
      - "9090" *port number*
-3. Open whatever SQL Manager you currently have and connect to the database.  Note: It should be the standard ```"sa"``` stuff for HSQLDB.
+3. Open whatever SQL Manager you currently have and connect to the database.  **Note:** It should be the standard ```"sa"``` stuff for HSQLDB.
 4. Run the initialization script (```DB-Initialize-Persisted_HSQL.sql```) provided in the "hsql-init-stuff" directory.
 5. Update ```application.yml``` hsql-persisted-profile section with your information.
