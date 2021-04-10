@@ -30,6 +30,34 @@ spring:
 ---
 
 spring:
+  datasource:
+    driver-class-name: "org.h2.Driver"
+    password: password
+    platform: "h2"
+    url: jdbc:h2:mem:testdb
+    username: sa
+  profiles: h2-profile
+  _comment: "This will be our H2 database profile"
+  flyway:
+    locations: "classpath:db/migration/h2sql-db" #db\migration\h2-db
+    outOfOrder: false
+  h2:
+    console:
+      enabled: true
+      path: /myh2
+      settings:
+        trace: true
+        web-admin-password: "test"
+        web-allow-others: true
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    hibernate:
+      ddl-auto: validate
+    open-in-view: true
+
+---
+
+spring:
   profiles: hsql-persisted-profile
   _comment: "This will be our DEV profile"
   flyway:
@@ -66,7 +94,7 @@ spring:
   _comment: "This will be our PRODUCTION profile"
   datasource:
     driver-class-name: "org.postgresql.Driver"
-    url: "jdbc:postgresql://192.168.99.104:5432/my_flyway_db"
+    url: "jdbc:postgresql://localhost:8085/my_flyway_db"
     username: "EMPLOYEE_APP_USER"
     password: "mynonsecretpassw0rd"
     platform: "postgresql"
@@ -75,7 +103,7 @@ spring:
     locations: "classpath:db/migration/postgresql-db,classpath:db/migration/production"
     mixed: true
     password: "mysecret" 
-    url: "jdbc:postgresql://192.168.99.104:5432/my_flyway_db"
+    url: "jdbc:postgresql://localhost:8085/my_flyway_db"
     user: "DB_OWNER_USER"
   jpa:
     hibernate:

@@ -6,7 +6,7 @@ services:
     restart: always
     container_name: db-init-demo-postgres
     ports:
-      - 5432:5432
+      - 8085:5432
     environment:
       POSTGRES_PASSWORD: mysecret
       POSTGRES_USER: postgres

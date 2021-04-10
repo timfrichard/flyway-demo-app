@@ -5,7 +5,7 @@
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>2.1.4.RELEASE</version>
+		<version>2.3.2.RELEASE</version>
 	</parent>
 	<groupId>com.speedracer</groupId>
 	<artifactId>flyway-demo-app</artifactId>
@@ -33,10 +33,10 @@
 		<!-- END Spring stuff -->
 
 		<!-- START Database drivers -->
-		<dependency>
-			<groupId>org.hsqldb</groupId>
-			<artifactId>hsqldb</artifactId>
-		</dependency>
+<!--		<dependency>-->
+<!--			<groupId>org.hsqldb</groupId>-->
+<!--			<artifactId>hsqldb</artifactId>-->
+<!--		</dependency>-->
 		<dependency>
 			<groupId>org.flywaydb</groupId>
 			<artifactId>flyway-core</artifactId>
@@ -45,6 +45,11 @@
 		<dependency>
 			<groupId>org.postgresql</groupId>
 			<artifactId>postgresql</artifactId>
+		</dependency>
+		<!-- H2 Database driver -->
+		<dependency>
+			<groupId>com.h2database</groupId>
+			<artifactId>h2</artifactId>
 		</dependency>
 		<!-- END Database drivers -->
 
