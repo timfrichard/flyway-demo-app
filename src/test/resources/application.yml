@@ -1,0 +1,18 @@
+spring:
+  datasource:
+    password: password
+    platform: "h2"
+    username: sa
+  flyway:
+    baselineOnMigrate: true
+    baselineDescription : "FLYWAY-BASELINE"
+    enabled: true
+    ignoreMissingMigrations: true
+    locations: "classpath:db/migration/h2sql-db,classpath:db/migration/local"
+    outOfOrder: false
+    validateOnMigrate: true
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    hibernate:
+      ddl-auto: validate
+    open-in-view: true

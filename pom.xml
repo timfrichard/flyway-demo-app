@@ -75,15 +75,31 @@
 		<!-- END General Stuff -->
 
 		<!-- START Test Dependencies -->
+		<!-- Test Dependencies -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
+			<scope>test</scope>
+			<exclusions>
+				<exclusion>
+					<groupId>org.junit.vintage</groupId>
+					<artifactId>junit-vintage-engine</artifactId>
+				</exclusion>
+				<exclusion>
+					<groupId>com.vaadin.external.google</groupId>
+					<artifactId>android-json</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-test</artifactId>
 			<scope>test</scope>
 		</dependency>
 		<dependency>
 			<groupId>org.flywaydb.flyway-test-extensions</groupId>
 			<artifactId>flyway-spring-test</artifactId>
-			<version>5.0.0</version>
+			<version>7.0.0</version>
 			<scope>test</scope>
 		</dependency>
 		<!-- END Test Dependencies -->
