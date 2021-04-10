@@ -10,7 +10,11 @@ server:
   port: 8081
 spring:
   datasource:
-    platform: "hsqldb"
+    driver-class-name: org.hsqldb.jdbcDriver
+    password: password
+    platform: "hsql"
+    url: jdbc:hsqldb:mem:testdb;DB_CLOSE_DELAY=-1
+    username: sa
   flyway:
     baselineOnMigrate: true
     baselineDescription : "FLYWAY-BASELINE"
@@ -19,9 +23,6 @@ spring:
     locations: "classpath:db/migration/hsql-db,classpath:db/migration/local"
     outOfOrder: true
     validateOnMigrate: true
-  hsql:
-    console:
-      enabled: true
   jpa:
     hibernate:
       ddl-auto: validate
